@@ -1,1 +1,1 @@
-# defi-staking
+# staking-example
