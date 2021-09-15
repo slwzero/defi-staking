@@ -19,7 +19,7 @@ contract('TokenFarm', ([owner, investor]) => {
     dappToken = await DappToken.new()
     tokenFarm = await TokenFarm.new(dappToken.address, daiToken.address)
 
-    // Transfer all Dapp tokens to farm (1 million)
+    // Transfer all Cake tokens to farm (1 million)
     await dappToken.transfer(tokenFarm.address, tokens('1000000'))
 
     // Send tokens to investor
@@ -33,17 +33,17 @@ contract('TokenFarm', ([owner, investor]) => {
     })
   })
 
-  describe('Dapp Token deployment', async () => {
+  describe('Cake Token deployment', async () => {
     it('has a name', async () => {
       const name = await dappToken.name()
-      assert.equal(name, 'DApp Token')
+      assert.equal(name, 'Cake Token')
     })
   })
 
   describe('Token Farm deployment', async () => {
     it('has a name', async () => {
       const name = await tokenFarm.name()
-      assert.equal(name, 'Dapp Token Farm')
+      assert.equal(name, 'Cake Token Farm')
     })
 
     it('contract has tokens', async () => {
@@ -83,7 +83,7 @@ contract('TokenFarm', ([owner, investor]) => {
 
       // Check balances after issuance
       result = await dappToken.balanceOf(investor)
-      assert.equal(result.toString(), tokens('100'), 'investor DApp Token wallet balance correct affter issuance')
+      assert.equal(result.toString(), tokens('100'), 'investor Cake Token wallet balance correct affter issuance')
 
       // Ensure that only onwer can issue tokens
       await tokenFarm.issueTokens({ from: investor }).should.be.rejected;

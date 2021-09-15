@@ -9,7 +9,7 @@ import './App.css'
 
 class App extends Component {
 
-  async componentWillMount() {
+  async componentWillMount() { // js event life cycle,API calls once the component is initiated and configure the values into the state
     await this.loadWeb3()
     await this.loadBlockchainData()
   }
@@ -30,7 +30,9 @@ class App extends Component {
       this.setState({ daiToken })
       let daiTokenBalance = await daiToken.methods.balanceOf(this.state.account).call() // web3
       console.log('daiToken Balance--',daiTokenBalance )
-      this.setState({ daiTokenBalance: daiTokenBalance.toString() })
+      this.setState({ daiTokenBalance: daiTokenBalance.toString() }) // use setState can updates to the component local state:
+
+
     } else {
       window.alert('DaiToken contract not deployed to detected network.')
     }

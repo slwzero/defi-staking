@@ -7,7 +7,7 @@ module.exports = async function(deployer, network, accounts) {
   await deployer.deploy(DaiToken)
   const daiToken = await DaiToken.deployed()
 
-  // Deploy Dapp Token
+  // Deploy Cake Token
   await deployer.deploy(DappToken)
   const dappToken = await DappToken.deployed()
 
