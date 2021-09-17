@@ -9,7 +9,9 @@ import './App.css'
 
 class App extends Component {
 
-  async componentWillMount() { // js event life cycle,API calls once the component is initiated and configure the values into the state
+  async componentWillMount() { 
+    // js event life cycle,API calls once the component is 
+    //initiated and configure the values into the state
     await this.loadWeb3()
     await this.loadBlockchainData()
   }
