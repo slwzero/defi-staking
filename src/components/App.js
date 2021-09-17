@@ -10,7 +10,7 @@ import './App.css'
 class App extends Component {
 
   async componentWillMount() { 
-    // js event life cycle,API calls once the component is 
+    // belongs to js event life cycle, API calls once the component is 
     //initiated and configure the values into the state
     await this.loadWeb3()
     await this.loadBlockchainData()
@@ -134,7 +134,6 @@ class App extends Component {
                   rel="noopener noreferrer"
                 >
                 </a>
-
                 {content}
 
               </div>
